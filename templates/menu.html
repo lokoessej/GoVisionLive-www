@@ -1,0 +1,109 @@
+<!-- <ion-nav-view name="all" ng-class="{expanded:isExpanded}" class="animate-fade-slide-in "> -->
+
+
+<!-- SIDE MENU HERE -->
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-assertive-900" ng-class="{ 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="fabContent"></ion-nav-view>
+        <ion-nav-view name="menuContent" ng-class="{expanded: isExpanded}"  >
+          <ion-tabs name="all-tabs" class="tabs-dark tabs-text tabs-text-only tabs-color-energized tabs-striped tabs-top top gvTabs no-header" header style="top:0px;">
+          <ion-tab name="tab-album" title="Albums" ui-sref="app.activity" ng-class="{'gv-tabs-active': isTabActive()}" >
+          <a class="tab-item">
+             Albums
+           </a>
+
+          </ion-tab>
+
+          <ion-tab name="tab-recent" title="Recent" ui-sref="app.gallery"  ng-class="{'gv-tabs-active': isTabActive()}">
+          <a class="tab-item">
+             Recent
+           </a>
+          </ion-tab>
+
+          <ion-tab name="tab-search" title="Search" ui-sref="app.profile"  ng-class="{'gv-tabs-active': isTabActive()}">
+          <a class="tab-item">
+             Search
+           </a>
+
+          </ion-tab>
+
+          </ion-tabs>
+
+          <ion-tabs name="all-tabs" class="tabs-dark tabs-bottom tabs-icon-only tabs-color-energized tabs-striped hide-me">
+
+          <ion-tab icon-on="ion-grid" icon-off="ion-grid" ui-sref="app.activity" ng-class="{'gv-tabs-active': isTabActive()}" ng-click="goActivity()" style="color:white !important;">
+          <!-- <ion-nav-view name="home-tab"></ion-nav-view> -->
+          <!-- Tab 1 content -->
+          </ion-tab>
+
+          <ion-tab name="gallery-tab" icon-on="ion-android-radio-button-on" icon-off="ion-android-radio-button-on" ui-sref="app.camera" ng-click="openCamera()" style="color:white !important;">
+          <!-- Tab 2 content -->
+                  <!-- <ion-nav-view name="gallery-tab"></ion-nav-view> -->
+          </ion-tab>
+
+          <ion-tab name="profile-tab" icon-on="ion-navicon-round" icon-off="ion-navicon-round" ui-sref="app.profile"  ng-click="goProfile()" style="color:white !important;">
+          <!-- Tab 3 content -->
+                  <!-- <ion-nav-view name="profile-tab"></ion-nav-view> -->
+          </ion-tab>
+
+          </ion-tabs>
+</ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" dark>
+
+
+      <ion-header-bar class="gvheader expanded">
+          <span class="avatar gvheader" style="background: url('img/user.jpg'); background-size: cover;"></span>
+          <span class="menuuserinfo">
+              {{user.email}}<br>
+              <a ng-click="logOut()">(log out)</a>
+          </span>
+      </ion-header-bar>
+      <ion-content class="dark-bg has-expanded-header">
+
+
+                        <ion-list id="goVisionLiveAlpha-list1" class="dark-bg " data-componentid="list1">
+
+
+
+
+
+
+<!--                </div> -->
+
+                    <button nav-clear menu-close class="item-icon-left stable  gvMenuItem button button-light  button-block button-clear " id="goVisionLiveAlpha-list-item8" data-componentid="list-item8" ui-sref="app.activity">
+                        <i class="icon ion-android-search"></i>Search</button>
+                    <button nav-clear menu-close class="item-icon-left stable  gvMenuItem button button-light  button-block button-clear " id="goVisionLiveAlpha-list-item9" data-componentid="list-item9" ui-sref="app.album">
+                        <i class="icon ion-android-settings"></i>Video Settings</button>
+                    <button nav-clear menu-close class="item-icon-left stable  gvMenuItem button button-light  button-block button-clear " id="goVisionLiveAlpha-list-item10" data-componentid="list-item10" ui-sref="app.profile">
+                        <i class="icon ion-android-person"></i>Account</button>
+                    <button nav-clear menu-close class="item-icon-left stable  gvMenuItem button button-light  button-block button-clear " id="goVisionLiveAlpha-list-item11" data-componentid="list-item11" ui-sref="app.storage">
+                        <i class="icon ion-android-cloud"></i>Storage</button>
+                    <button nav-clear menu-close class="item-icon-left stable  gvMenuItem button button-light  button-block button-clear "  id="goVisionLiveAlpha-list-item12" data-componentid="list-item12" ui-sref="app.cloud">
+                        <i nav-clear menu-close class="icon ion-android-phone-portrait"></i>App Settings</button>
+
+                                        <button nav-clear menu-close id="goVisionLiveAlpha-button2" style="font-weight:300;" class=" button button-energized  button-block button-clear icon icon-text energized" data-componentid="button2">                    <i class="icon ion-android-sync padding"></i>Check for updates</button>
+
+                <div nav-clear menu-close class="" data-componentid="image5">
+                    <img src="img/logo-full.png" width="80%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+
+                </div>
+                <h6 id="goVisionLiveAlpha-markdown2" style="color:#525252;text-align:center;" class=" " data-componentid="markdown2">v0.1</h6>
+                </ion-list>
+
+
+
+
+
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
+<!-- </ion-nav-view> -->

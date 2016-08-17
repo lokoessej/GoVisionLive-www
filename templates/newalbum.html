@@ -1,0 +1,16 @@
+<ion-view view-title="New Album">
+    <ion-pane>
+        <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in animate-fade-slide-out in done gv-back">
+            <div style="height:55px;"></div>
+            <div align="center">
+            <h1>New Album</h1>
+            Name: <input ng-model="name" id="NewAlbumName" type="text" class="item-input"><br>
+            Description: <input ng-model="description" id="NewAlbumDescription" type="text" class="item-input"><br>
+            </div>
+            <div align="center">
+                <button ng-click="pushAlbum()" class="button button-assertive ink">Add Album</button>
+            </div>
+            <div style="height:55px;"></div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

@@ -1,0 +1,156 @@
+.c {
+    padding: 10px;
+    border: 1px solid #999999;
+    margin: 5px;
+}
+input {
+    margin-right: 10px;
+    border: 0px;
+    padding: 2px;
+}
+a,
+a:link,
+a:visited,
+a:hover {
+    color: #f07000;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+.thumb {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-size: cover;
+    background-position: center;
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+}
+.media {
+    width: 33%;
+    padding: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background: white;
+    display: inline-block;
+}
+.media:hover,
+.media.active {
+    background: #f07000;
+    color: white;
+}
+.album {
+    display: block;
+    padding: 5px;
+    border: 2px solid #999999;
+    margin-bottom:10px;
+}
+.album.active {
+    border: 2px solid #f07000;
+}
+input[readonly] {
+    background: #cccccc !important;
+}
+.tabs-top > .tabs {
+    top: 0px;
+}
+.tabs-striped .tabs {
+    border-bottom: 0;
+}
+.gv-back .scroll-content {
+    margin-bottom: 49px;
+}
+.menuuserinfo {
+    font-weight: normal;
+    font-size:10pt;
+    padding-left: 70px;
+    padding-top: 20px;
+}
+.list .button.button-light.button-clear {
+    padding-left: 50px;
+    text-align: left;
+    margin-left: 25px;
+}
+
+.menu .avatar {
+    height: 50px;
+    width: 50px;
+}
+.menu .bar.bar-header.expanded {
+    min-height: 80px;
+}
+.has-expanded-header {
+    top: 79px!important;
+}
+.menu-open .bar.bar-header.expanded {
+  border: 0px !important;
+}
+ion-content {
+    margin-bottom: 49px !important;
+}
+.menu {
+    background: #111;
+}
+.card {
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+.card-info h2 {
+    color: #111 !important;
+    font-size: 18pt;
+}
+
+
+
+
+
+.bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+
+.button-kewl {
+    color: white !important;
+    background: rgba(0,0,0,.2);
+}
+
+.card-info {
+    padding:12px;
+}
+
+h1, h2, h3, html, body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.album-button {
+    color: #999999;
+    font-size:3rem !important;
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+/* lazy........ */
+.item {
+    opacity:1 !important;
+    visibility: visible !important;
+}
+
+.ion-grid, .ion-android-radio-button-on, .ion-navicon-round{
+    color: white !important;
+}

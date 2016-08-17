@@ -1,0 +1,128 @@
+<ion-view view-title="Profile">
+
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+         <div class="hero slide-up" style="background-color:#f5f5f5;" >
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/user.png');"></div>
+                <h3><a >{{user.displayName}}</a></h3>
+                <h4>{{user.email}}</h4>
+            </div>
+
+        </div>
+        <!-- <div class="item item-divider"> -->
+
+        <!-- <button class="button icon-left ion-home">Home</button> -->
+       <!-- </div> -->
+        <div class="button-bar row no-padding">
+          <i class="col icon-center icon ion-social-facebook light energized-bg icon-gv"></i>
+          <i class="col icon icon ion-social-googleplus light energized-bg icon-gv"></i>
+          <i class="col icon ion-social-instagram light-bg icon-gv" ></i>
+        </div>
+        <!-- <div class="tabs tabs-dark tabs-icon-top static">
+           <a ui-sref="app.activity" class="tab-item">
+               <i class="icon ion-social-facebook"></i>
+           </a>
+           <a ui-sref="app.friends" class="tab-item">
+               <i class="icon ion-social-googleplus"></i>
+           </a>
+           <a ui-sref="app.gallery" class="tab-item">
+               <i class="icon ion-social-instagram"></i>
+           </a>
+       </div> -->
+        <!-- <div  class=""  > -->
+
+
+
+            <div ui-sref="app.cloud" >
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url({{value.urlCloud}});"></span>
+
+
+                          <!-- <video ng-if="checkValue(value)" loop muted autoplay poster="img/impin-bg.jpg" >
+                              <source ng-src="{{$scope.value.urlCloud}}" type="video/mp4">
+
+                          </video> -->
+                    <div class="card-footer text-right">
+                        <!-- <i class="icon ion-chatbubbles positive"></i> 6 -->
+                        <i class="icon ion-gear-a" ng-class="{positive:value.favorited}"></i>
+                        <div class="pull-left">
+                            Email Settings
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url({{value.urlCloud}});"></span>
+
+
+                          <!-- <video ng-if="checkValue(value)" loop muted autoplay poster="img/impin-bg.jpg" >
+                              <source ng-src="{{$scope.value.urlCloud}}" type="video/mp4">
+
+                          </video> -->
+
+                    <div class="card-footer text-right">
+                        <!-- <i class="icon ion-chatbubbles positive"></i> 6 -->
+                        <i class="icon ion-gear-a" ng-class="{positive:value.favorited}"></i>
+                        <div class="pull-left">
+                            Payment Settings
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="item item-divider">
+             details
+           </div> -->
+        <!-- </div> -->
+
+
+
+
+<list>
+        <div  class="card item item-text-wrap"  >
+          <div class="item item-divider">
+           <h2 class="header">Live Settings</h2>
+         </div>
+            <div  >
+                <div class="item item-avatar item-text-wrap">
+                    <!-- <span class="avatar" style="background-image: url(value.urlCloud);"></span> -->
+
+
+                          <!-- <video ng-if="checkValue(value)" loop muted autoplay poster="img/impin-bg.jpg" >
+                              <source ng-src="{{$scope.value.urlCloud}}" type="video/mp4">
+
+                          </video> -->
+                    <div class="card-footer text-right">
+                        <!-- <i class="icon ion-chatbubbles positive"></i> 6 -->
+                        <i class="icon ion-checkmark energized" ng-class="{positive:value.favorited}"></i>
+                        <div class="pull-left">
+                            <i class="icon icon-left ion-social-googleplus energized" style="font-size:20px;"></i>{{user.displayName}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="item item-divider">
+             <h3><a >{{user.displayName}}</a></h3>
+           </div> -->
+        </div>
+</list>
+
+
+
+
+
+    </ion-content>
+</ion-view>
+
+<!--            <div  class="tabs tabs-dark tabs-icon-bottom static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-arrow-graph-up-right"></i> Activity
+            </a>
+            <a ui-sref="app.cloud" class="tab-item">
+                <i class="icon ion-android-people"></i> Camera
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-images"></i> Photos
+            </a>
+        </div> -->

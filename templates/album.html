@@ -1,0 +1,49 @@
+<ion-view view-title="Activity">
+    <ion-pane>
+        <ion-content ng-class="{expanded:isExpanded}">
+            <div style="height:55px;"></div>
+            <div class="card list ink ink-dark">
+                <div class="card-info" style="position:relative;">
+                    <div style="position:absolute;right:10px;text-align:right;">
+                        <button class="button button-clear ink ink-dark"
+                            ng-click="goEditAlbumAct('{{albumId}}')">
+                            <i class="ion-edit album-button" style="font-size:1.5rem !important;"></i>
+                        </button>
+                    </div>
+                    <h2 style="margin-top: 0px;">{{album.name}}</h2>
+                    {{album.description ? album.description : 'No description'}}
+                </div>
+                <a ng-repeat="(key, keyMedia) in album.mediaIds" ng-if="myMedia[keyMedia]" class="media item" ng-click="goMediaAct(keyMedia)">
+                    <div class="thumb ink" ng-if="isVideo(myMedia[keyMedia])" style="background-image:url('/img/material-graphite.jpg')">
+                        <div ng-if="myMedia[keyMedia].favorited" style="position:absolute;right:5px;bottom:5px;">
+                            <i class="ion ion-star" style="transform:scale(1.5);"></i>
+                        </div>
+                    </div>
+                    <div class="thumb ink" ng-if="!isVideo(myMedia[keyMedia])" style="background-image:url('{{myMedia[keyMedia].urlCloud}}')">
+                        <div ng-if="myMedia[keyMedia].favorited" style="position:absolute;right:5px;bottom:5px;">
+                            <i class="ion ion-star" style="transform:scale(1.5);"></i>
+                        </div>
+                    </div>
+                </a><br>
+                <div ng-if="keyAlbum != 0" align="right">
+                    <button class="button button-clear ink ink-dark" style="margin-bottom:0.5rem;"
+                        ng-click="">
+                        <i class="icon ion-android-cloud-done album-button"></i>
+                        <!-- <i ng-if="myMedia[keyMedia].clouded" class="ion-android-cloud-done album-button"></i>
+                        <i ng-if="!myMedia[keyMedia].clouded" class="ion-android-cloud-outline album-button"></i> -->
+                    </button>
+                    <button class="button button-clear ink ink-dark" style="margin-bottom:0.5rem;"
+                        ng-click="">
+                        <i ng-if="myAlbums[albumId].favorited" class="icon ion-android-star album-button"></i>
+                        <i ng-if="!myAlbums[albumId].favorited" class="icon ion-android-star-outline album-button"></i>
+                    </button>
+                    <button class="button button-clear ink ink-dark" style="margin-bottom:0.5rem;"
+                        ng-click="">
+                        <i class="icon ion-android-share album-button"></i>
+                    </button>
+                </div>
+            </div><!-- -->
+            <div style="height:55px;"></div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

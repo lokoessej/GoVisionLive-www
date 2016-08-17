@@ -1,0 +1,180 @@
+
+<html id="page">
+<head>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{background:black;margin:0;padding:0;}#output{position:absolute;right:0;}</style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body onload="init()" onresize="resize()" style="margin:0px;">
+	<a href="javascript:doThisThing();">go</a><br>
+<canvas id="output" width="1280" height="720"></canvas>
+<div style="position:absolute;top:150%;width:100%;text-align:center;" align="center">
+<video id="video" muted="muted" controls="controls" autoplay="autoplay" style="max-width:720px;width:100%" loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)">
+<!-- <source id="srcmp4" src="" type="video/mp4"/> -->
+</video>
+<div style="display:none;">
+<canvas id="sourcecopy" width="1280" height="720"></canvas>
+<!-- <script>setTimeout(function(){document.getElementById('output').requestFullScreen()}, 4000)</script> -->
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+// Get url params...
+var get_params = function(search_string) {
+  var parse = function(params, pairs) {
+    var pair = pairs[0];
+    var parts = pair.split('=');
+    var key = decodeURIComponent(parts[0]);
+    var value = decodeURIComponent(parts.slice(1).join('='));
+    // Handle multiple parameters of the same name
+    if (typeof params[key] === "undefined") {
+      params[key] = value;
+    } else {
+      params[key] = [].concat(params[key], value);
+    }
+    return pairs.length == 1 ? params : parse(params, pairs.slice(1))
+  }
+  // Get rid of leading ?
+  return search_string.length == 0 ? {} : parse({}, search_string.substr(1).split('&'));
+}
+var params = get_params(location.search);
+var vidUrl = params['v'];
+
+
+function doThisThing(){
+	console.log('setUrl', vidUrl);
+	$('#srcmp4').prop('src', vidUrl);
+	$('#video').append("<source src=\""+vidUrl+"\" type=\"video/mp4\">");
+}
+console.log('vidUrl', vidUrl);
+doThisThing();
+
+var video;
+var copy;
+var copycanvas;
+var outputcanvas;
+var draw;
+
+var SOURCERECT = {x:0,y:0,w:0,h:0};
+var PAINTRECT = {x:0,y:0,w:1280,h:720};
+
+function init(){
+	setTimeout(function(){
+		page = document.getElementById('page');
+		video = document.getElementById('video');
+		copycanvas = document.getElementById('sourcecopy');
+		copy = copycanvas.getContext('2d');
+		outputcanvas = document.getElementById('output');
+		draw = outputcanvas.getContext('2d');
+		setInterval("processFrame()", 33);
+		setTimeout("resize()", 50);
+	},2000);
+}
+
+var RAD = Math.PI/180;
+var randomJump = false;
+var debug = true;
+var degree = 185;
+var degree2 = 175;
+
+var centery = 572;
+
+function processFrame(){
+	if(!isNaN(video.duration)){
+		if(SOURCERECT.w == 0){
+			SOURCERECT = {x:0,y:0,w:video.videoWidth,h:video.videoHeight};
+		}
+		if(video.currentTime == video.duration){
+			video.currentTime = 0;
+		}
+	}
+
+	var w = window.innerWidth;
+	var h = window.innerHeight;
+	draw.canvas.width = w;
+	draw.canvas.height = h;
+	scale = (w/SOURCERECT.w/2);
+
+	copy.drawImage(video, 0, 0);
+	draw.clearRect(PAINTRECT.w, PAINTRECT.y, PAINTRECT.w, PAINTRECT.h);
+
+	var rightx = SOURCERECT.w*2-(SOURCERECT.w/2);
+	var leftx = SOURCERECT.w/2;
+	var radius = SOURCERECT.w/2;
+
+	var angle = degree*RAD;
+	var prepx = Math.cos(angle);
+	var prepz = Math.sin(angle);
+
+	var angle2 = degree2*RAD;
+	var prepx2 = Math.cos(angle2);
+	var prepz2 = Math.sin(angle2);
+
+	draw.scale(scale,scale);
+
+	draw.save();
+	draw.restore();
+	var realwidth = Math.floor(SOURCERECT.w/scale);
+
+	var stepsize = 8;
+
+	for(var i=0; i<realwidth; i+=stepsize){
+		var dist = radius-i;
+		var x = prepx*dist;
+		var y = 0;
+		var z = prepz*dist;
+		var height = SOURCERECT.h+(z*0.5);
+
+		draw.save();
+
+		var _x = Math.round(x+rightx);
+		var _y = y+centery;
+		draw.drawImage(copycanvas, i, 0, stepsize, SOURCERECT.h, _x, _y-(height/2), stepsize, height);
+
+		draw.restore();
+
+		var dist = radius-i;
+		var x = prepx2*dist;
+		var y = 0;
+		var z = prepz2*dist;
+		var height = SOURCERECT.h+(z*0.5);
+
+		draw.save();
+
+		var _x = Math.round(x+leftx);
+		var _y = y+centery;
+		draw.drawImage(copycanvas, i, 0, stepsize, SOURCERECT.h, _x, _y-(height/2), stepsize, height);
+
+		draw.restore();
+	}
+	if(SOURCERECT.w != 0){
+		draw.save();
+		resize();
+	}
+}
+function resize(){
+	PAINTRECT = {x:0,y:0,w:window.innerWidth,h:window.innerHeight};
+}
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

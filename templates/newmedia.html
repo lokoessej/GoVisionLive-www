@@ -1,0 +1,22 @@
+<ion-view view-title="Activity">
+    <ion-pane>
+        <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in animate-fade-slide-out in done gv-back">
+            <div style="height:55px;"></div>
+            <div align="center">
+            <h1>New Media</h1>
+                Name: <input ng-model="name" id="NewMediaName" type="text" class="item-input"><br>
+                Description: <input ng-model="description" id="NewMediaDescription" type="text" class="item-input"><br>
+                urlCloud: <input ng-model="urlCloud" id="NewMediaUrlCloud" type="text" class="item-input"><br>
+                type: <input ng-model="type" id="NewMediaType" type="text" class="item-input"><br>
+                size: <input ng-model="size" id="NewMediaSize" type="text" class="item-input"><br>
+            </div>
+            <div align="center">
+                <span id="NewMediaProgress" style="color:green;font-weight:bold;"></span><br>
+                <input id="NewMediaFile" type="file" class="button button-assertive ink"><br><br>
+                <button ng-click="pushMedia()" class="button button-assertive ink">Add Media</button>
+            </div>
+            <div id="NewMediaPreview"></div>
+            <div style="height:55px;"></div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

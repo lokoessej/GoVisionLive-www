@@ -1,0 +1,242 @@
+/* Empty. Add your own CSS if you like */
+/*.menu-open .bar.bar-header.expanded {
+  background-color: #6d6d6d;
+  color: #e0e0e0;
+}
+.menu-open {
+  background-color: #6d6d6d;
+  color: #e0e0e0;
+}
+.bar-header{
+  background-color: #6d6d6d;
+  color: #e0e0e0;
+}*/
+a {
+  color: #387ef5;
+}
+/*h4 {
+  color: #424242;
+}*/
+.gvheader{
+  background-color: #6d6d6d;
+  color: #e0e0e0;
+}
+.scroll {
+    background-color: #56544e;
+}
+.gv-back .scroll{
+  background-color: #e6e6e6;
+
+}
+.scroll .gv-back{
+  background-color: #e6e6e6;
+
+}
+/*.card{
+  background-color: #464646;
+}*/
+.card {
+    background-color: #f8f8f8;
+}
+.gvTabs {
+  /*background-color:#AAAAAA;*/
+  top:0px;
+}
+.body{
+  background-color: #e6e6e6
+}
+body{
+  background-color: #e6e6e6
+}
+.pane, .view {
+    /*position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;*/
+    background-color: #e6e6e6;
+    /*overflow: hidden;*/
+}
+.gv-header{
+  margin-top:35px;
+}
+.gv-tabs-active{
+    margin-top: -2px;
+    color: #ef473a;
+    border: 0 solid #ef473a;
+    border-top-width: 2px;
+}
+  .gvMenuItem{
+        background-color: #666666;
+      }
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px;
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+        background-color: #A6A6A6;
+      }
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+/* General
+==================================*/
+h1 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 42px;
+}
+
+
+/* Utilities
+==================================*/
+.title-bordered {
+    border-top: solid 2px #bbb;
+    padding-top: 30px;
+}
+
+p {
+    color: #555;
+    margin: 0 0 25px;
+}
+
+.scroll {
+    height: 100%;
+    background-color: #e6e6e6;
+}
+
+
+/* Menu
+==================================*/
+.menu .bar.bar-header.expanded {
+    transition: all .5s ease-in-out;
+}
+
+.menu-open .bar.bar-header.expanded {
+    background-color: #222;
+}
+
+.menu h2 {
+    bottom: 0;
+    font-size: 18px;
+    left: 16px;
+    position: absolute;
+}
+
+.menu .avatar {
+    height: 88px;
+    width: 88px;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+
+
+/* Login
+==================================*/
+.app-icon {
+    background-color: #fff;
+    background: url('../img/logo.png') center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    margin: 0 auto;
+    width: 125px;
+}
+
+.social-login {
+    position: fixed;
+    bottom: 0;
+}
+.menu-open .bar.bar-header.expanded {
+  background-color: #111;
+  color: #e0e0e0;
+}
+.menu h2{
+  color: #f07700;
+}
+.item {
+  background-color:#f0f0f0;
+}
+.menu.menu-left * {
+    font-weight: bold;
+    background-color: #111;
+}
+.hero h4 {
+    color: #424242;
+    /*margin: 3px 0 16px;*/
+}
+.card, .list-inset {
+    margin: 20px 0px;
+    border-radius: 2px;
+    background-color: #f0f0f0;
+}
+.gallery-thumbnails{
+    width: 150px;
+    height: 150px;
+}
+.icon-gv {
+    text-align:center;
+    font-size:60px;
+    /*top: 50%;
+    left: 50%;
+    height: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+    /*width: 10px;*/
+    /*height: 10px;*/
+    /*display: block;*/
+
+}
+.icon-green{
+  color:#188c18;
+}
+.storage-storage {
+  background-image: url('../img/storage.png');
+  width: 100%;
+  height: 47%;
+   background-repeat:no-repeat;
+   background-size: contain;
+}
+.storage-cloud {
+  background-image: url('../img/cloud.png');
+  width: 100%;
+  height: 47%;
+   background-repeat:no-repeat;
+   background-size: contain;
+}

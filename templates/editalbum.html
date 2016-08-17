@@ -1,0 +1,17 @@
+<ion-view view-title="Edit Album">
+    <ion-pane>
+        <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in animate-fade-slide-out in done gv-back">
+            <div style="height:55px;"></div>
+            <div align="center">
+                <h1>Edit Album</h1>
+                Name: <input id="EditAlbumName" type="text" class="item-input" value="{{album.name}}"><br>
+                Description: <input id="EditAlbumDescription" type="text" class="item-input" value="{{album.description}}"><br>
+            </div>
+            <div align="center">
+                <button ng-click="deleteAlbum()" class="button button-royal ink">Delete Album</button>
+                <button ng-click="updateAlbum()" class="button button-assertive ink">Save Album</button>
+            </div>
+            <div style="height:55px;"></div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

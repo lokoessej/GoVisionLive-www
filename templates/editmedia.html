@@ -1,0 +1,51 @@
+<ion-view view-title="Activity">
+    <ion-pane>
+        <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in animate-fade-slide-out in done gv-back">
+            <div style="height:55px;"></div>
+            <div class="card list ink ink-dark" style="position:relative;">
+                <button ng-click="go3d()" ng-if="media.type == 'video/mp4'" class="button button-clear ink ink-dark" style="position:absolute;top:5px;right:5px;"><img src="/img/player%203d_60.png" style="height:40px;width:40px;"></button>
+                <img ng-if="media.type != 'video/mp4'" src="{{media.urlCloud}}"  style="width:100%;">
+                <video controls ng-if="media.type == 'video/mp4'" style="width:100%;">
+                    <source ng-if="media.type == 'video/mp4'" ng-src="{{media.urlCloud}}" type="video/mp4">
+                </video><br>
+                <div class="card-info" style="position:relative;">
+                    <label class="item item-input">
+                        <span class="input-label">Name</span>
+                        <input id="EditMediaName" type="text" value="{{mediaName}}">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Description</span>
+                        <input id="EditMediaDescription" type="text" class="item-input" value="{{media.description}}">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Size</span>
+                        <input id="EditMediaSize" readonly class="item-input" value="{{mediaSize}}">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Album</span>
+                        <select id="EditMediaAlbum">
+                            <option ng-repeat="(key, value) in myAlbums" value="{{key}}">{{value.name}}</option>
+                        </select><br>
+                        <!-- <select id="EditMediaAlbum" class="item-input" ng-options="value as value.name for value in myAlbums"  ng-model="album" ng-change="changeAlbum()">
+                        </select><br> -->
+                        <input readonly id="EditMediaAlbumArray" type="text" class="item-input" value="{{JSON.stringify(media.albumIds)}}" style="display:none;"><br>
+                    </label>
+                    <div align="right">
+                        <button class="button button-clear ink ink-dark"
+                            ng-click="favoriteMedia()">
+                            <i ng-if="media.favorited" class="icon ion-android-star album-button" style="font-size: 2rem !important;"></i>
+                            <i ng-if="!media.favorited" class="icon ion-android-star-outline album-button" style="font-size: 2rem !important;"></i>
+                        </button>
+                        <button class="button button-clear ink ink-dark" ng-click="deleteMedia()">
+                            <i class="icon ion-android-delete album-button" style="font-size: 2rem !important;"></i>
+                        </button>
+                        <button class="button button-clear ink ink-dark" ng-click="saveMedia()">
+                            <i class="icon ion-edit album-button" style="font-size: 2rem !important;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div style="height:55px;"></div>
+        </ion-content>
+    </ion-pane>
+</ion-view>
